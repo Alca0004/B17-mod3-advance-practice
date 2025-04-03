@@ -1,33 +1,21 @@
 import "./scss/style.scss";
-import { fetchMovies } from "./api/api";
+import { getMovieListData } from "./api/api.js";
+import { apiConfig } from "./api/apiConfig.js";
+import { renderMovieList } from "./movie/movieList.js";
 
-// Get reference to the app container where we'll display the movies
 const app = document.getElementById("app");
 
-// Function to render movie cards
-function renderMovies(movies) {
-  app.innerHTML = ""; // Clear existing content
+async function addMovieListGrid() {
+  try {
+    const { results: movies } = await getMovieListData(apiConfig.movieListType.NowPlaying);
 
-  // Loop through the movies and create a card for each
-  movies.forEach((movie) => {
-    const movieCard = document.createElement("div");
-    movieCard.classList.add("movie-card");
+    const rowElement = renderMovieList(movies);
 
-    // Create the content for the movie card
-    movieCard.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}">
-      <h3>${movie.title}</h3>
-      <p>Rating: ${movie.vote_average}</p>
-      <p>Release Date: ${movie.release_date}</p>
-    `;
-
-    // Append the card to the app container
-    app.appendChild(movieCard);
-  });
+    app.innerHTML = "";
+    app.appendChild(rowElement);
+  } catch (error) {
+    console.error("Error loading movie list:", error);
+  }
 }
 
-fetchMovies("now_playing")
-  .then((movies) => {
-    renderMovies(movies); // 👉 This actually renders them on screen
-  })
-  .catch((error) => console.error("Error fetching movies:", error));
+addMovieListGrid();
