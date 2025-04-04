@@ -8,7 +8,6 @@ export function createMovieListToolbar() {
 
   const flexDiv = createDivElementWithClass("d-flex justify-content-between align-items-center w-100");
 
-  // Add buttons and select element
   flexDiv.appendChild(createButtonsWrapper());
   flexDiv.appendChild(createMovieTypeSelectElement());
   container.appendChild(flexDiv);

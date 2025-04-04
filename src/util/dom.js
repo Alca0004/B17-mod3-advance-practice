@@ -4,7 +4,7 @@ export function createDivElementWithClass(classList) {
   if (Array.isArray(classList)) {
     div.classList.add(...classList);
   } else if (typeof classList === "string") {
-    div.classList.add(...classList.split(" ")); // ✅ split string into separate classes
+    div.classList.add(...classList.split(" "));
   }
 
   return div;

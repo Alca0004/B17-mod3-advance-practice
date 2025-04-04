@@ -1,5 +1,4 @@
 import "./scss/style.scss";
-
 import { getMovieListData } from "./api/api.js";
 import { apiConfig } from "./api/apiConfig.js";
 import { createMoviesContainerElement } from "./movie-list/movieList.js";
