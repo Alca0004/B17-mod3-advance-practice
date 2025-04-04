@@ -1,1 +1,5 @@
-@use "./bootstrap";
+@import "./_variables";
+@import "./_bootstrap";
+@import "./_buttons";
+@import "./_header";
+@import "./_movie";
