@@ -1,7 +1,7 @@
 export function createMovieTypeSelectElement() {
   const select = document.createElement("select");
   select.setAttribute("id", "movie-type-select");
-  select.classList.add("form-select");
+  select.classList.add("form-select", "w-auto");
 
   const options = [
     { value: "now_playing", label: "Now Playing" },
