@@ -1,12 +1,6 @@
-export function createDivElementWithClass(classList) {
+export function createDivElementWithClass(classNames) {
   const div = document.createElement("div");
-
-  if (Array.isArray(classList)) {
-    div.classList.add(...classList);
-  } else if (typeof classList === "string") {
-    div.classList.add(...classList.split(" "));
-  }
-
+  div.className = classNames;
   return div;
 }
 

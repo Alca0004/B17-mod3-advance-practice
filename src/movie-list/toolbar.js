@@ -1,11 +1,9 @@
-// src/movie-list/movie-list-toolbar.js
 import { createDivElementWithClass } from "../util/dom.js";
 import { createMovieTypeSelectElement } from "./dropdown.js";
 
 export function createMovieListToolbar() {
   const movieWrapper = createDivElementWithClass("movie-toolbar-wrapper");
   const container = createDivElementWithClass("container");
-
   const flexDiv = createDivElementWithClass("d-flex justify-content-between align-items-center w-100");
 
   flexDiv.appendChild(createButtonsWrapper());

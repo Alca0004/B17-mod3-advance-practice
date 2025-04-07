@@ -14,12 +14,12 @@ const typeSelect = document.getElementById("movie-type-select");
 
 typeSelect.addEventListener("change", (event) => {
   currentMovieType = event.target.value;
-  renderMovieList();
+  start();
 });
 
 let currentMovieType = "now_playing";
 
-async function renderMovieList() {
+async function start() {
   const layout = getCurrentLayout();
 
   try {
@@ -33,6 +33,6 @@ async function renderMovieList() {
   }
 }
 
-layoutToggle(renderMovieList);
+layoutToggle(start);
 
-renderMovieList();
+start();
