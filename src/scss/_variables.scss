@@ -1,1 +1,14 @@
 $primary: #fba834;
+$font-body: "Inter", sans-serif;
+$font-heading: "Playfair Display", serif;
+
+body {
+  font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-heading;
+}

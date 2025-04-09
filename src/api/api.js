@@ -13,3 +13,12 @@ function getMovieListUrl(type, config) {
   movieListUrl += `&language=${config.langIso}`;
   return movieListUrl;
 }
+export async function getMovieDetailData(movieId) {
+  const url = `${apiConfig.baseUrl}/movie/${movieId}?api_key=${apiConfig.apiKey}&language=${apiConfig.langIso}`;
+  return (await axios.get(url)).data;
+}
+
+export async function getMovieCreditsData(movieId) {
+  const url = `${apiConfig.baseUrl}/movie/${movieId}/credits?api_key=${apiConfig.apiKey}&language=${apiConfig.langIso}`;
+  return (await axios.get(url)).data;
+}

@@ -4,22 +4,23 @@ export function layoutToggle(callback) {
   const gridBtn = document.getElementById("movie-grid-btn");
   const listBtn = document.getElementById("movie-list-btn");
 
-  const buttons = {
-    grid: gridBtn,
-    list: listBtn,
-  };
-
-  Object.entries(buttons).forEach(([layout, button]) => {
-    button?.addEventListener("click", () => {
-      currentLayout = layout;
-
-      Object.entries(buttons).forEach(([key, btn]) => {
-        btn.classList.toggle("active", key === layout);
-      });
-
+  if (gridBtn) {
+    gridBtn.addEventListener("click", () => {
+      currentLayout = "grid";
+      gridBtn.classList.add("active");
+      listBtn.classList.remove("active");
       callback();
     });
-  });
+  }
+
+  if (listBtn) {
+    listBtn.addEventListener("click", () => {
+      currentLayout = "list";
+      listBtn.classList.add("active");
+      gridBtn.classList.remove("active");
+      callback();
+    });
+  }
 }
 
 export function getCurrentLayout() {

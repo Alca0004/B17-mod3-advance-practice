@@ -1,3 +1,5 @@
+// fn in charge of dropdown options
+
 export function createMovieTypeSelectElement() {
   const select = document.createElement("select");
   select.setAttribute("id", "movie-type-select");
