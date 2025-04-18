@@ -20,13 +20,15 @@ typeSelect.addEventListener("change", (event) => {
 });
 
 let currentMovieType = "now_playing";
-
+// when movie is clicked it shows detail page
 window.addEventListener("movie:select", (event) => {
   const movieId = event.detail;
   renderMovieDetail(movieId);
 });
+//When triggered it shows the movie list again
+
 window.addEventListener("movie:list:back", () => {
-  start(); // this re-renders the movie list view
+  start();
 });
 async function start() {
   const layout = getCurrentLayout();
@@ -45,4 +47,3 @@ async function start() {
 layoutToggle(start);
 
 start();
-export { start };

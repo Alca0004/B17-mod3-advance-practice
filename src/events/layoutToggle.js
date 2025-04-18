@@ -1,26 +1,15 @@
 let currentLayout = "grid";
 
 export function layoutToggle(callback) {
-  const gridBtn = document.getElementById("movie-grid-btn");
-  const listBtn = document.getElementById("movie-list-btn");
+  document.getElementById("movie-grid-btn")?.addEventListener("click", () => {
+    currentLayout = "grid";
+    callback();
+  });
 
-  if (gridBtn) {
-    gridBtn.addEventListener("click", () => {
-      currentLayout = "grid";
-      gridBtn.classList.add("active");
-      listBtn.classList.remove("active");
-      callback();
-    });
-  }
-
-  if (listBtn) {
-    listBtn.addEventListener("click", () => {
-      currentLayout = "list";
-      listBtn.classList.add("active");
-      gridBtn.classList.remove("active");
-      callback();
-    });
-  }
+  document.getElementById("movie-list-btn")?.addEventListener("click", () => {
+    currentLayout = "list";
+    callback();
+  });
 }
 
 export function getCurrentLayout() {

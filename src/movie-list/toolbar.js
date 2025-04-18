@@ -1,6 +1,7 @@
 import { createDivElementWithClass } from "../util/dom.js";
 import { createMovieTypeSelectElement } from "./dropdown.js";
 
+//Fn in charge of creating the whole outer wrapper of the whole toolbar
 export function createMovieListToolbar() {
   const movieWrapper = createDivElementWithClass("movie-toolbar-wrapper");
   const container = createDivElementWithClass("container");
@@ -13,7 +14,7 @@ export function createMovieListToolbar() {
 
   return movieWrapper;
 }
-
+// Fn in charge of creating another wrapping which holds both buttons
 function createButtonsWrapper() {
   const buttonsWrapper = createDivElementWithClass("d-flex gap-2");
 
@@ -22,7 +23,7 @@ function createButtonsWrapper() {
 
   return buttonsWrapper;
 }
-
+// Fn that creates the grip button
 function createGridButtonElement() {
   const button = document.createElement("button");
   button.setAttribute("id", "movie-grid-btn");
@@ -36,7 +37,7 @@ function createGridButtonElement() {
   button.appendChild(img);
   return button;
 }
-
+// fn that creates the list button
 function createListButtonElement() {
   const button = document.createElement("button");
   button.setAttribute("id", "movie-list-btn");

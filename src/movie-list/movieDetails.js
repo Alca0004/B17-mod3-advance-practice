@@ -31,7 +31,7 @@ function createBackButton() {
   });
 
   const img = document.createElement("img");
-  img.src = "/left-arrow.svg"; // make sure this file exists in public
+  img.src = "/left-arrow.svg";
   img.alt = "Back";
 
   button.appendChild(img);
@@ -83,13 +83,13 @@ function createBackdropOverlay(movie) {
   return section;
 }
 
-// Fn which creates the cast section and role within the movie
+// Fn which creates the cast section
 function createCastSection(credits) {
   const section = document.createElement("section");
   section.classList.add("movie-cast");
 
   const title = document.createElement("h3");
-  title.textContent = "Top Cast";
+  title.textContent = "Cast";
   section.appendChild(title);
 
   const castWrapper = document.createElement("div");
